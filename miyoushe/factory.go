@@ -19,7 +19,7 @@ import (
 */
 
 const (
-	Server     = "gf01" // 崩坏2服务器代号，官服 gf01
+	ServerGF   = "gf01" // 崩坏2服务器代号，官服 gf01
 	UserAgent  = "Mozilla/5.0 (Linux; Android 7.1.2; vmos Build/NZH54D; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.117 Mobile Safari/537.36 miHoYoBBS"
 	AppVersion = "2.42.1"
 	ClientType = "5"
