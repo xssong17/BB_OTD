@@ -3,7 +3,6 @@ package miyoushe
 import (
 	"fmt"
 	"github.com/liushuochen/gotable"
-	"strconv"
 	"testing"
 )
 
@@ -35,7 +34,7 @@ func TestGetTuanZhanInfo(t *testing.T) {
 		minutes := action.EnterTime / 60
 		remainingSeconds := action.EnterTime % 60
 		enterTime := fmt.Sprintf("%02d:%02d", minutes, remainingSeconds)
-		rowList := []string{enterTime, action.Point, strconv.Itoa(int(action.PassTime)), strconv.Itoa(int(action.ContributeRate))}
+		rowList := []string{enterTime, action.Point, fmt.Sprintf("%.0f", action.PassTime), fmt.Sprintf("%.1f", action.ContributeRate)}
 		err = table.AddRow(rowList)
 		if err != nil {
 			t.Fatalf("%v", err)
