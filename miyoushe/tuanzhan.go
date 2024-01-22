@@ -74,10 +74,10 @@ var (
 )
 
 type Action struct {
-	EnterTime      int64  //	进图时间
-	Point          string //	点位
-	PassTime       int64  //	耗时
-	ContributeRate int64  //	贡献值
+	EnterTime      int64   //	进图时间
+	Point          string  //	点位
+	PassTime       float64 //	耗时
+	ContributeRate float64 //	贡献值
 }
 
 type TuanZhanItem struct {
@@ -125,8 +125,8 @@ func GetTuanZhanInfo(cookie, server, roleId string) (TuanZhanItem, error) {
 		action := Action{
 			EnterTime:      each.Get("enter_time").Int(),
 			Point:          PointMap[each.Get("level_id").String()],
-			PassTime:       each.Get("pass_time").Int(),
-			ContributeRate: each.Get("contribute_rate").Int() / 10,
+			PassTime:       each.Get("pass_time").Float(),
+			ContributeRate: each.Get("contribute_rate").Float() / 10,
 		}
 		lastHistoryArray = append(lastHistoryArray, action)
 	}
